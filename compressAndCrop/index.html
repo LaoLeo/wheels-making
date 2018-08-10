@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 50px;
+            display: flex;
+        }
+
+        .container>div {
+            flex: 1;
+        }
+
+        .container .area-upload {
+            width: 300px;
+            height: 300px;
+            border: 1px dotted #000000;
+            text-align: center;
+            line-height: 300px;
+        }
+
+        .container .area-upload>.tips {
+            color: #333333;
+            font-size: 14px;
+        }
+
+        .active {
+            transform: scale(1.1);
+            transition: transform .3s;
+            box-shadow: 0 0 40px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .area-img figure {
+            display: inline-block;
+        }
+
+        .area-img img {
+            width: 400px;
+            height: auto;
+        }
+
+        .area-img .info {
+            display: flex;
+            justify-content: space-between;
+        }
+        .area-img:last-child {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <div class="area-img">
+                <h3>压缩前</h3>
+                <figure>
+                    <img src="src/lilard10.jpg" draggable="true" alt="">
+                    <figcaption class="info">
+                        <span>width/height:</span>
+                        <span>size:</span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="area-img" style="display: none;">
+                    <h3>压缩后</h3>
+                    <figure>
+                        <img src="src/lilard10.jpg" draggable="true" alt="">
+                        <figcaption class="info">
+                            <span>width/height:</span>
+                            <span>size:</span>
+                        </figcaption>
+                    </figure>
+                </div>
+        </div>
+
+        <div>
+            <div id="uploadArea" class="area-upload">
+                <span class="tips">拖到此处压缩</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/compressAndCrop.js?12222555"></script>
+</body>
+
+</html>
