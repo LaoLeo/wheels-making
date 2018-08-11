@@ -25,14 +25,13 @@ let handler = {
 
                 handler.readImgFile(file, imgEl[0], function(img) {
                     handler.appendImg(figcaptionEl[0], areaEl[0], img.naturalWidth, img.naturalHeight, file.size)
-                })
 
-                handler.compress(imgEl[0], MAX_WIDTH, function(blob) {
-                    handler.readImgFile(blob, imgEl[1], function(img) {
-                        handler.appendImg(figcaptionEl[1], areaEl[1], img.naturalWidth, img.naturalHeight, blob.size)
+                    handler.compress(img, MAX_WIDTH, function(blob) {
+                        handler.readImgFile(blob, imgEl[1], function(img) {
+                            handler.appendImg(figcaptionEl[1], areaEl[1], img.naturalWidth, img.naturalHeight, blob.size)
+                        })
                     })
                 })
-
             } else {
                 file = window.file
                 handler.compress(imgEl[0], MAX_WIDTH, function(blob) {
