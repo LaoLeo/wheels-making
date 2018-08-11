@@ -15,19 +15,13 @@
 
         .container {
             margin: 50px;
-            display: flex;
-        }
-
-        .container>div {
-            flex: 1;
         }
 
         .container .area-upload {
-            width: 300px;
-            height: 300px;
+            padding: 5px 10px;
+            height: 24px;
             border: 1px dotted #000000;
             text-align: center;
-            line-height: 300px;
         }
 
         .container .area-upload>.tips {
@@ -44,55 +38,50 @@
         .area-img figure {
             display: inline-block;
         }
-
-        .area-img img {
-            width: 400px;
-            height: auto;
-        }
-
-        .area-img .info {
-            display: flex;
-            justify-content: space-between;
-        }
         .area-img:last-child {
             margin-top: 20px;
+        }
+        .btns {
+            display: flex;
+            justify-content: space-around;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div>
-            <div class="area-img">
+        <div id="imgArea">
+            <div class="btns">
+                <input type="file" accept="image/*" onchange="handler.selectImg(event)"/>
+                <div id="uploadArea" class="area-upload">
+                    <span class="tips">拖到此处压缩</span>
+                </div>
+            </div>
+            
+            <div class="area-img" style="display: none;">
                 <h3>压缩前</h3>
                 <figure>
-                    <img src="src/lilard10.jpg" draggable="true" alt="">
+                    <img id="imgBC" draggable="true" alt="">
                     <figcaption class="info">
-                        <span>width/height:</span>
+                        <span>width/height:</span><br>
                         <span>size:</span>
                     </figcaption>
                 </figure>
             </div>
             <div class="area-img" style="display: none;">
-                    <h3>压缩后</h3>
-                    <figure>
-                        <img src="src/lilard10.jpg" draggable="true" alt="">
-                        <figcaption class="info">
-                            <span>width/height:</span>
-                            <span>size:</span>
-                        </figcaption>
-                    </figure>
-                </div>
-        </div>
-
-        <div>
-            <div id="uploadArea" class="area-upload">
-                <span class="tips">拖到此处压缩</span>
+                <h3>压缩后</h3>
+                <figure>
+                    <img src="src/lilard10.jpg" draggable="true" alt="">
+                    <figcaption class="info">
+                        <span>width/height:</span><br>
+                        <span>size:</span>
+                    </figcaption>
+                </figure>
             </div>
         </div>
     </div>
 
-    <script src="src/compressAndCrop.js?12222555"></script>
+    <script src="src/compressAndCrop.js?12225458798255"></script>
 </body>
 
 </html>
