@@ -22,7 +22,7 @@ let handler = {
             let file = evt.dataTransfer.files[0]
             if (file) {
                 if (file.type.split('/')[0] !== 'image') return alert('文件不是图片类型')
-                
+
                 handler.readImgFile(file, imgEl[0], function(img) {
                     handler.appendImg(figcaptionEl[0], areaEl[0], img.naturalWidth, img.naturalHeight, file.size)
                 })
@@ -49,6 +49,7 @@ let handler = {
         handler.readImgFile(file, imgEl[0], function(img) {
             handler.appendImg(figcaptionEl[0], areaEl[0], img.naturalWidth, img.naturalHeight, file.size)
         })
+        areaEl[1].style.display = 'none'
     },
     compress(imgEl, maxWidth, callback) {
         
